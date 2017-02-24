@@ -15,8 +15,8 @@ before_install:
 after_script:
   - cd ./dist
   - git init
-  - git config user.name "kylin"
-  - git config user.email "kailinzhou@yeah.net"
+  - git config user.name "zqren"
+  - git config user.email "lxrcshik@sina.com"
   - git add .
   - git commit -m "TravisCI"
   - git push --force --quiet "https://${G_TOKEN}@${GH_REF}" master:gh-pages
