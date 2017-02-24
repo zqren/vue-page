@@ -19,7 +19,7 @@ after_script:
   - git config user.email "lxrcshik@sina.com"
   - git add .
   - git commit -m "TravisCI"
-  - git push --force --quiet "https://${G_TOKEN}@${GH_REF}" branch:gh-pages
+  - git push --force --quiet "https://${G_TOKEN}@${GH_REF}" master:gh-pages
 # E: Build LifeCycle
 # 设置只有master的push才进行构建
 branches:
@@ -27,4 +27,4 @@ branches:
     - master
 env:
  global:
-   - GH_REF: https://github.com/zqren/vue-page.git
+   - GH_REF: github.com/zqren/vue-page.git
