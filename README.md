@@ -1,6 +1,6 @@
 # vue-page
 
-> a vue.js pro
+> a vue.js po
 
 ## Build Setup
 
