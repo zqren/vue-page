@@ -28,7 +28,7 @@
 			}
 		},
 		created() {
-            this.getList()
+       this.getList()
 		},
 		computed: {
 			allpage() {
@@ -41,7 +41,7 @@
 			},
 			getList() {
 				var _that = this
-				this.$http.get('/api/topics', {
+				this.$http.get('/topics', {
 					params: {
 						page: _that.currentpage,
 						limit: _that.limit

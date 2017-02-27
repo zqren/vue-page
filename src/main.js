@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 
 import axios from 'axios'
+axios.defaults.baseURL = "https://cnodejs.org/api/v1"
+axios.defaults.timeout = 10000
 Vue.prototype.$http = axios
 
 
