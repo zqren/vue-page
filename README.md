@@ -1,7 +1,7 @@
 # vue-page
 [![Build Status](https://travis-ci.org/Himmas/vue-cnode.svg?branch=master)](https://travis-ci.org/Himmas/vue-cnode)
 
-> a vue.js po
+> a vue.js poject
 
 ## Build Setup
 
