@@ -2,19 +2,23 @@
 	<div class="list">
 		<ul class="list-ul">
 			<li class="list-li" v-for="list in result">
-				<span class="list-span title">{{list.nickName}}</span>
+				<span class="list-span title">{{list.title}}</span>
 			</li>
 		</ul>
 	</div>
 </template>
 <script>
-	import axios from 'axios'
 
 	export default {
 		name: 'list',
 		props:{
 			result:{
-				default:[]
+			    type: Array,
+				default: function () {
+					return {
+
+					}
+				 }
 			}
 		}
 	}

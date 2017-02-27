@@ -21,12 +21,12 @@ module.exports = {
     port: 8080,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-   proxyTable: {
+    proxyTable: {
 			'/api': {
-				target: 'http://121.43.100.42:8083',
+				target: ' https://cnodejs.org/api/v1',
 				changeOrigin: true,
 				pathRewrite: {
-					'^/api': '/api'
+					'^/api': ''
 				}
 			}
 		},

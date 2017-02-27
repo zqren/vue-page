@@ -16,15 +16,14 @@
 	import pageination from './components/page'
 	import list from './components/list'
 
-	import axios from 'axios'
-
 	export default {
 		name: 'app',
 		data() {
 			return {
 				currentpage: 1,
 				rows: 5,
-				total: 0,
+				limit:10,
+				total: 500,
 				result: []
 			}
 		},
@@ -42,16 +41,15 @@
 			},
 			getList() {
 				var _that = this
-				axios.get('/api/seaCircle/searchNearbyUser.do', {
+				this.$http.get('/api/topics', {
 					params: {
-						userId: 10,
 						page: _that.currentpage,
-						rows: _that.rows
+						limit: _that.limit
 					}
 				})
 				.then(function(res) {
-					_that.total = res.data.data.userCount
-					_that.result = res.data.data.userList
+
+					_that.$set(_that.$data,'result',res.data.data)
 				})
 				.catch(function(error) {
 					console.log(error)
