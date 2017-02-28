@@ -41,7 +41,7 @@
 			},
 			getList() {
 				var _that = this
-				this.$http.get('/topics', {
+				_that.$http.get('/topics', {
 					params: {
 						page: _that.currentpage,
 						limit: _that.limit
