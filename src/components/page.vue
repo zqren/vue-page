@@ -113,7 +113,7 @@
 						if(this.currentPage == num) return
 						this.currentPage = num
 					} else if(type == 'next') {
-						if(this.currentPage == this.allPage) return
+						if(this.currentPage == this.allpage) return
 						this.currentPage++
 					}
 					this.$emit('current-change', this.currentPage)
