@@ -6,7 +6,8 @@
 			>
 				总共{{allpage}}页
 			</li>
-			<li class="page-li" 
+			<li class="page-li" :class="{disabled:currentPage==1}"
+           @click="currentChange(currentPage,'hpBtn')"
 				v-if="hep">{{hpBtn}}</li>
 			<li class="page-li" :class="{disabled:currentPage==1}" @click="currentChange(currentPage,'pre')">
 				{{preBtn}}
@@ -17,7 +18,8 @@
 			<li class="page-li" :class="{disabled:currentPage == allpage}" @click="currentChange(currentPage,'next')">
 				{{nextBtn}}
 			</li>
-			<li class="page-li" 
+			<li class="page-li" :class="{disabled:currentPage == allpage}"
+           @click="currentChange(currentPage,'epBtn')"
 				v-if="hep">{{epBtn}}</li>
 		</ul>
 	</div>
@@ -106,15 +108,25 @@
 			},
 			methods: {
 				currentChange(num, type) {
-					if(type == 'pre') {
-						if(this.currentPage == 1) return
-						this.currentPage--
-					} else if(type == 'goto') {
-						if(this.currentPage == num) return
-						this.currentPage = num
-					} else if(type == 'next') {
-						if(this.currentPage == this.allpage) return
-						this.currentPage++
+          switch(type){
+							case 'pre':
+								if(this.currentPage == 1) return;
+								this.currentPage--
+								break;
+							case 'goto':
+								if(this.currentPage == num) return
+								this.currentPage = num
+								break;
+							case 'next':
+								if(this.currentPage == this.allpage) return 
+								this.currentPage++
+								break;
+							case 'hpBtn':
+								this.currentPage = 1
+								break;
+							case 'epBtn':
+								this.currentPage = this.allpage
+								break;
 					}
 					this.$emit('current-change', this.currentPage)
 				}
